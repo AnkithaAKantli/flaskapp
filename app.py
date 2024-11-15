@@ -7,15 +7,15 @@ import mysql.connector
 import cloudinary
 import cloudinary.uploader
 
-app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+app = Flask(_name_)
+CORS(app, resources={r"/": {"origins": ""}})
 
 @app.route('/')
 def home():
     return render_template('index.html') # Allow CORS for all origins
 
 # Ensure the uploads directory exists
-upload_dir = os.path.join(os.path.dirname(__file__), "uploads")
+upload_dir = os.path.join(os.path.dirname(_file_), "uploads")
 if not os.path.exists(upload_dir):
     os.makedirs(upload_dir)
 
@@ -126,5 +126,5 @@ def add_items():
     finally:
         cursor.close()
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     app.run(debug=True)
